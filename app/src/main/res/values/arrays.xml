@@ -23,4 +23,15 @@
         <item>24</item>
         <item>26</item>
     </string-array>
+    <string-array name="doors">
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="drivetrain">
+        <item>FWD</item>
+        <item>RWD</item>
+        <item>AWD</item>
+
+    </string-array>
 </resources>

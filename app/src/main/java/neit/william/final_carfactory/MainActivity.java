@@ -8,12 +8,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.ListAdapter;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText txtCarName;
-
+    private EditText txtCarType;
+    private String txtDrv;
+    private TextView lblDisplay;
 
 
     @Override
@@ -30,11 +38,58 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+
         });
 
-        
 
 
+
+
+        Button btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+        Spinner spncyl = (Spinner) findViewById(R.id.spnCyls);
+        String txtCyl = spncyl.getSelectedItem().toString();
+
+        Spinner spntire = (Spinner) findViewById(R.id.spnTires);
+        String txtTire = spntire.getSelectedItem().toString();
+
+        Spinner spnWheel = (Spinner) findViewById(R.id.spnWheels);
+        String txtWheel = spnWheel.getSelectedItem().toString();
+
+        Spinner spndoor = (Spinner) findViewById(R.id.spnDoors);
+        String txtDoor = spndoor.getSelectedItem().toString();
+
+        Spinner spndr = (Spinner) findViewById(R.id.spnDrive);
+        String txtDrive = spndr.getSelectedItem().toString();
+
+                lblDisplay = (TextView) findViewById(R.id.lblDisplay);
+
+        String carName = txtCarName.getText().toString();
+        String carType = txtCarType.getText().toString();
+
+
+                CarFactory rcr = new CarFactory();
+
+                rcr.setCarName(carName);
+                rcr.setCarType(carType);
+                rcr.setDrivetrain(txtDrive);
+                rcr.setNumOfCylinders(Integer.parseInt(txtCyl));
+                rcr.setTireType(txtTire);
+                rcr.setWheelSize(Integer.parseInt(txtWheel));
+                rcr.setNumOfDoors(Integer.parseInt(txtDoor));
+
+                rcr.createNewCar(rcr.getCarType(), rcr.getNumOfDoors(), rcr.getTireType(), rcr.getNumOfCylinders(), rcr.getWheelSize(), rcr.getDrivetrain(), rcr.getCarName());
+
+                lblDisplay.setText(rcr.builtCar);
+
+
+
+
+            }
+
+        });
     }
 
     @Override

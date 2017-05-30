@@ -1,165 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Car Name:"
-        android:layout_alignBaseline="@+id/txtCarName"
-        android:layout_alignBottom="@+id/txtCarName"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="103dp"
+        android:text="Name: "
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/txtCarName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="45dp"
         android:ems="10"
         android:inputType="textPersonName" />
-
-    <Switch
-        android:id="@+id/swNumDoors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:showText="true"
-        android:splitTrack="true"
-        android:textOff="2"
-        android:textOn="4"
-        tools:checked="true"
-        android:layout_below="@+id/txtCarName"
-        android:layout_alignLeft="@+id/txtCarName"
-        android:layout_alignStart="@+id/txtCarName" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/swNumDoors"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:text="Number of Doors:" />
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="19dp"
+        android:text="Number of Doors: " />
 
     <Spinner
-        android:id="@+id/spnTireType"
+        android:id="@+id/spnDoors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:entries="@array/tire_type"
-        android:layout_below="@+id/swNumDoors"
         android:layout_alignLeft="@+id/txtCarName"
-        android:layout_alignStart="@+id/txtCarName" />
+        android:layout_alignStart="@+id/txtCarName"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:entries="@array/doors"
+        />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spnTireType"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="13dp"
         android:text="Tire Type: " />
 
+    <Spinner
+        android:id="@+id/spnTires"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/spnDoors"
+        android:layout_alignStart="@+id/spnDoors"
+        android:layout_alignTop="@+id/textView3"
+        android:entries="@array/tire_type" />
+
     <TextView
-        android:id="@+id/txtview"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="13dp"
         android:text="Number of Cylinders: "
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
+        />
 
     <Spinner
-        android:id="@+id/spnCylinders"
+        android:id="@+id/spnCyls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtview"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/spnTireType"
-        android:layout_alignStart="@+id/spnTireType"
-        android:entries="@array/cylinders"/>
-
-    <Spinner
-        android:id="@+id/spnWheelSize"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtview"
-        android:layout_alignLeft="@+id/spnCylinders"
-        android:layout_alignStart="@+id/spnCylinders"
-        android:entries="@array/wheel_size"/>/>
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spnWheelSize"
-        android:layout_alignLeft="@+id/txtview"
-        android:layout_alignStart="@+id/txtview"
-        android:text="Wheel Size: " />
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/spnTires"
+        android:layout_alignStart="@+id/spnTires"
+        android:layout_alignTop="@+id/textView4"
+        android:entries="@array/cylinders"
+        />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Drivetrain"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_marginTop="17dp" />
-
-    <Switch
-        android:id="@+id/swDrivetrain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/spnWheelSize"
-        android:layout_alignStart="@+id/spnWheelSize"
-        android:showText="true"
-        android:textOff="RWD"
-        android:textOn="AWD" />
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="12dp"
+        android:text="Wheel Size: " />
 
     <Spinner
-        android:id="@+id/spnCreatedCars"
+        android:id="@+id/spnWheels"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="83dp" />
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignLeft="@+id/spnCyls"
+        android:layout_alignStart="@+id/spnCyls"
+        android:layout_alignTop="@+id/textView6"
+        android:entries="@array/wheel_size"/>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Created Cars"
-        android:layout_below="@+id/btnAdd"
-        android:layout_alignRight="@+id/swDrivetrain"
-        android:layout_alignEnd="@+id/swDrivetrain"
-        android:layout_marginTop="36dp" />
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="16dp"
+        android:text="Drivetrain:" />
+
+    <Spinner
+        android:id="@+id/spnDrive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignLeft="@+id/spnWheels"
+        android:layout_alignStart="@+id/spnWheels"
+        android:layout_alignTop="@+id/textView7"
+        android:entries="@array/drivetrain"
+        />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Add Car to Shipping Crate"
-        android:layout_below="@+id/swDrivetrain"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_marginTop="12dp"
+        android:text="Create"
+        android:layout_below="@+id/txtCarType"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lblDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAdd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="11dp"
+        android:text="Type of Car: " />
+
+    <EditText
+        android:id="@+id/txtCarType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView9"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ter" />
 
 </RelativeLayout>

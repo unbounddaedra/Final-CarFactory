@@ -21,7 +21,7 @@ public class CarFactory
 	
 	ArrayList<String> shippingCrate = new ArrayList<String>();
 	
-	private String builtCar;
+	public String builtCar;
 	
 	
 
